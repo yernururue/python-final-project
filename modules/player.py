@@ -1,7 +1,12 @@
 class Stat:
     def __init__(self, date, score):
-        self.date = date
-        self.score = score
+        self._date = date
+        self._score = score
+    
+    def get_date(self):
+        return self._date
+    def get_score(self):
+        return self._score
 
 class Player:
     def __init__(self, name):
@@ -14,7 +19,7 @@ class Player:
     def get_total_score(self):
         total_score = 0
         for score in self.stats:
-            total_score += score.score
+            total_score += score.get_score
         return total_score
 
     def get_average_score(self):
@@ -37,3 +42,10 @@ class ProPlayer(Player):
 
     def get_player_tier(self):
         return "Pro Player"
+
+class BeginnerPlayer(Player):
+    def __init__(self, name):
+        super().__init__(name)
+
+    def get_player_tier(self):
+        return "Beginner player"
