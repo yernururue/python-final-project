@@ -11,10 +11,10 @@ class Analyzer:
             score = entry['score']
             date = entry['date']
 
-            if name not in self.players:
+            if name not in self.players: # Giving tier for first time appearance
                 if score >= 150:
                     self.players[name] = ProPlayer(name)
-                elif score >= 100:
+                elif score <= 100:
                     self.players[name] = BeginnerPlayer(name)
                 else:
                     self.players[name] = Player(name)
@@ -40,6 +40,7 @@ class Analyzer:
 
                 if date in daily_best:
                     current_record = daily_best[date][1]
+                    # Changes if better score is found at this date
                     if score > current_record:
                         daily_best[date] = (player.name, score)
 
