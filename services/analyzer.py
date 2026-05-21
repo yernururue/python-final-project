@@ -49,3 +49,8 @@ class Analyzer:
 
         return daily_best
 
+    def get_pro_players(self): #generator
+        for player in self.players.values():
+            if player.get_player_tier() == "Pro Player":
+                yield player
+

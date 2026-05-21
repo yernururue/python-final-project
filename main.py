@@ -46,5 +46,9 @@ def main():
         else:
             print("Invalid date" + str(date))
 
+    print("\n -- Pro players for tournaments -- ") #Showing generator working
+    for pro in analyzer.get_pro_players():
+        print(pro.name + " is a pro")
+
 if __name__ == "__main__":
     main()
