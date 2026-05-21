@@ -14,7 +14,7 @@ def main():
     raw_json = load_game_data("data.json")
     analyzer.process_data(raw_json)
 
-    print("Game analyzer v0.5 ")
+    print("Game analyzer v1.0 ")
 
     print("\n -- Leaderboard -- ")
     leaderboard = analyzer.get_leaderboard()
