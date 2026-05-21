@@ -22,7 +22,13 @@ def main():
     rank = 1
 
     for p in leaderboard:
-        line = str(rank) + ". " + p.name + " | Total: " + str(p.get_total_score()) + " | Tier: " + p.get_player_tier()
+        avg = round(p.get_average_score(), 1)
+        line = (
+                str(rank) + ". " + p.name +
+                " | Total: " + str(p.get_total_score()) +
+                " | Average score: " + str(avg) +
+                " | Tier: " + p.get_player_tier()
+                )
         print(line)
         rank += 1
 
