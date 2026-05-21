@@ -30,3 +30,21 @@ class Analyzer:
             reverse=True
             )
 
+    def get_best_daily_performance(self):
+        daily_best = {}
+
+        for player in self.players.values():
+            for stat in player.stats:
+                date =stat.get_date()
+                score = stat.get_score()
+
+                if date in daily_best:
+                    current_record = daily_best[date][1]
+                    if score > current_record:
+                        daily_best[date] = (player.name, score)
+
+                else:
+                    daily_best[date] = (player.name, score)
+
+        return daily_best
+
