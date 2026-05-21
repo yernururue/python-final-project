@@ -19,7 +19,7 @@ class Player:
     def get_total_score(self):
         total_score = 0
         for score in self.stats:
-            total_score += score.get_score
+            total_score += score.get_score()
         return total_score
 
     def get_average_score(self):
