@@ -25,7 +25,8 @@ python-final-project/
 │   └── player.py           # Stat, Player, ProPlayer, BeginnerPlayer classes
 ├── services/
 │   ├── analyzer.py         # Analyzer class — core logic
-│   └── data_loader.py      # JSON loader
+│   ├── data_loader.py      
+│   └── load_game_data.py   # JSON loader
 └── tests/
     └── test.py             # Unit tests
 ```
